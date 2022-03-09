@@ -1,15 +1,11 @@
 package com.indicina.urlshortenertest.request;
 
 
+import lombok.Data;
+
+@Data
 public class ShortUrlRequest {
 
     private String url;
 
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
 }

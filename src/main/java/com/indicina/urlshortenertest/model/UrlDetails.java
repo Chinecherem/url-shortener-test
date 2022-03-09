@@ -1,15 +1,16 @@
 package com.indicina.urlshortenertest.model;
 
-import javax.annotation.processing.Generated;
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Table(name = "UrlDetail")
-public class UrlDetails {
+public class UrlDetails implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Lob
     private String longUrl;
     private String shortUrl;
     private String urlCode;

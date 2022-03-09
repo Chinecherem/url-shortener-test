@@ -6,6 +6,8 @@ import com.google.common.hash.Hashing;
 import java.nio.charset.Charset;
 
 public class GenerateUrlCode {
+    private GenerateUrlCode() {
+    }
 
     public static String generateCode(String url){
 

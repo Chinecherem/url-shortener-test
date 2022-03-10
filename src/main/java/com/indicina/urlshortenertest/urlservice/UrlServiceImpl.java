@@ -6,6 +6,7 @@ import com.indicina.urlshortenertest.response.UrlResponse;
 import com.indicina.urlshortenertest.response.UrlStatisticResponse;
 import com.indicina.urlshortenertest.util.GenerateUrlCode;
 import com.indicina.urlshortenertest.util.ValidateUrl;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 import java.util.Optional;
 
+@AllArgsConstructor
 @Service
 public class UrlServiceImpl implements UrlService{
 
@@ -22,6 +24,10 @@ public class UrlServiceImpl implements UrlService{
 
     @Value("${baseUrl}")
     private String baseUrl;
+
+
+    public UrlServiceImpl(UrlRepository urlRepository) {
+    }
 
 
     @Override

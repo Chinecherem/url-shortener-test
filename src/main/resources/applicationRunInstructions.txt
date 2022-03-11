@@ -1,5 +1,16 @@
-This is an Java application using springboot as framework.
+This is a Java application using the springBoot framework.
 The instruction to run the code are:
 1. If you open the project using IntelliJ IDE, scroll to the UrlShortenerTestApplication,
 then click the green arrow on the class name to run.
-2.
+2. If you are deploying on command line, navigate to the project folder and run: mvn clean package.
+ - The above command will create a target folder in the project folder.
+ -Navigate to the target folder and run: java -jar url-shortener-test-0.0.1-SNAPSHOT.jar.
+
+ The jar file can also be created from intelliJ IDE:
+ -Click on maven at the right corner of the IDE where project is opened.
+ -Click lifecycle and then click package. It will run the command and create jar file in the target folder
+
+ NOTE:
+ -For test purpose, I change the scope of the h2 dependency in the pom.xml to "test".
+ -The application uses tomcat server(embedded) and runs on port 8081
+

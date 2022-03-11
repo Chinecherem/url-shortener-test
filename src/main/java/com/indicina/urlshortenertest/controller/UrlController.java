@@ -1,4 +1,4 @@
-package com.indicina.urlshortenertest.urlcontroller;
+package com.indicina.urlshortenertest.controller;
 
 import com.indicina.urlshortenertest.request.ShortUrlRequest;
 import com.indicina.urlshortenertest.response.UrlResponse;
@@ -7,8 +7,6 @@ import com.indicina.urlshortenertest.urlservice.UrlServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +16,8 @@ import java.io.IOException;
 
 @RestController
 @RequestMapping(path = "api/")
-public class UrlOperation {
+public class UrlController {
+
 
     @Autowired
     private UrlServiceImpl urlService;
@@ -27,11 +26,9 @@ public class UrlOperation {
 
     @PostMapping("encode")
     @ResponseBody
-    public ResponseEntity<UrlResponse> encodeUrl(@Validated @RequestBody ShortUrlRequest request) {
+    public UrlResponse encodeUrl(@Validated @RequestBody ShortUrlRequest request) {
 
-        UrlResponse response = urlService.encodeUrl(request.getUrl());
-
-        return new ResponseEntity<>(response, HttpStatus.OK);
+        return urlService.encodeUrl(request.getUrl());
     }
 
     @GetMapping("decode")

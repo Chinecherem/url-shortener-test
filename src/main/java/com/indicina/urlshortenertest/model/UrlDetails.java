@@ -16,6 +16,15 @@ public class UrlDetails implements Serializable {
     private String urlCode;
     private Date dateCreated;
 
+    public UrlDetails() {
+    }
+
+    public UrlDetails(String longUrl, String shortUrl, String urlCode) {
+        this.longUrl = longUrl;
+        this.shortUrl = shortUrl;
+        this.urlCode = urlCode;
+    }
+
     public Long getId() {
         return id;
     }

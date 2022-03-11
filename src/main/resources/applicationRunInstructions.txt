@@ -1,0 +1,5 @@
+This is an Java application using springboot as framework.
+The instruction to run the code are:
+1. If you open the project using IntelliJ IDE, scroll to the UrlShortenerTestApplication,
+then click the green arrow on the class name to run.
+2.
